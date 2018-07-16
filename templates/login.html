@@ -19,22 +19,21 @@
             <div class="wrap">
                 <p class="form-title">
                     Sign In</p>
-                <form class="login">
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
+                <form method= "POST" class="login">
+                <input type="text" placeholder="Username" name="username">
+                <input type="password" placeholder="Password" name="password" />
                 <input type="submit" value="Sign In" class="btn btn-success btn-sm" />
                 <div class="remember-forgot">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" />
-                                    Remember Me
-                                </label>
+                                <div>
+                                    <a href="{{ url_for('register') }}" class="forgot-pass">Resgister</a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6 forgot-pass-content">
-                            <a href="javascript:void(0)" class="forgot-pass">Forgot Password</a>
+                            <a href="{{ url_for('forgotpassword') }}" class="forgot-pass">Forgot Password</a>
                         </div>
                     </div>
                 </div>
