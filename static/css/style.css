@@ -11,6 +11,7 @@
 
 .user {
     background-color:rgb(243, 245, 250);
+    color:rgb(73, 73, 99);
     padding:10px;
     border-radius: 20px
 }
@@ -18,7 +19,7 @@
 .bot {
     background-color: rgb(73, 73, 99);
     padding:10px;
-    color:white;
+    color:rgb(255, 255, 255);
     border-radius: 20px
 }
 
