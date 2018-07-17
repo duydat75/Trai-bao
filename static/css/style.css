@@ -1,0 +1,30 @@
+/* index */
+.avatar{
+    border-radius:50%;
+    width:50px;
+    height:50px;
+}
+
+.d-flex{
+    display:flex;
+}
+
+.user {
+    background-color:rgb(243, 245, 250);
+    padding:10px;
+    border-radius: 20px
+}
+
+.bot {
+    background-color: rgb(73, 73, 99);
+    padding:10px;
+    color:white;
+    border-radius: 20px
+}
+
+.user input{
+    background-color:rgb(243, 245, 250);
+    border: 1px solid #0084ff;
+    color:#0084ff;
+    border-radius: 20px;
+}

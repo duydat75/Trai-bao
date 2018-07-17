@@ -5,58 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lover</title>
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    <form method="POST">
-        <table>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="radio" name="gender" value="1" checked> Male
-                    <input type="radio" name="gender" value="0"> Female
-                </td>
-            </tr>
-            <tr>
-                <td><label>Ten</label></td>
-                <td><input type="text" name="fullname"></td>
-            </tr>
-            <tr>
-                <td><label>DOB</label></td>
-                <td><input type="text" name="dob"></td>
-            </tr>
-            <tr>
-                <td><label>City</label></td>
-                <td><select name="city" id="city">
-                    <option value="1">Hanoi</option>
-                    <option value="2">Da nang</option>
-                    <option value="3">Ho Chi Minh</option>
-                </select></td>
-            </tr>
-            <tr>
-                <td><label>Like</label></td>
-                <td>
-                    <input type="checkbox" name="like" value="1">An uong
-                    <input type="checkbox" name="like" value="2">Shopping
-                    <input type="checkbox" name="like" value="3">Xoac
-                </td>
-            </tr>
-            <tr>
-                <td><label>Hate</label></td>
-                <td>
-                    <input type="checkbox" name="hate" value="1">1
-                    <input type="checkbox" name="hate" value="2">2
-                    <input type="checkbox" name="hate" value="3">3
-                </td>
-            </tr>
-            <tr>
-                <td><label>Description</label></td>
-                <td><input type="text" name="description"></td>
-            </tr>
-            <tr>
-                <td><a href="{{ url_for('index') }}">Back</a></td>
-                <td><button type="submit">Next</button></td>
-            </tr>
-        </table>
-    </form>
+    <div class="d-flex p-3">
+        <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-4">
+        <form method="POST" class="bot">
+            <table>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="radio" name="gender" value="1" checked> Male
+                        <input type="radio" name="gender" value="0"> Female
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Ten</label></td>
+                    <td><input type="text" name="fullname"></td>
+                </tr>
+                <tr>
+                    <td><label>DOB</label></td>
+                    <td><input type="text" name="dob"></td>
+                </tr>
+                <tr>
+                    <td><label>City</label></td>
+                    <td><select name="city" id="city">
+                        <option value="1">Hanoi</option>
+                        <option value="2">Da nang</option>
+                        <option value="3">Ho Chi Minh</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><label>Like</label></td>
+                    <td>
+                        <input type="checkbox" name="like" value="1"> An uong <br>
+                        <input type="checkbox" name="like" value="2"> Shopping <br>
+                        <input type="checkbox" name="like" value="3"> Xoac <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Hate</label></td>
+                    <td>
+                        <input type="checkbox" name="hate" value="1"> 1 <br>
+                        <input type="checkbox" name="hate" value="2"> 2 <br>
+                        <input type="checkbox" name="hate" value="3"> 3 <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Description</label></td>
+                    <td><input type="text" name="description"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit">Next</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </body>
 </html>
