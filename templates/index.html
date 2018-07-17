@@ -7,6 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    Hello
+    {% if session['loggedin'] %}
+        <h3>Xin chao, {{ session['user_id'] }}</h3>
+        <a href="{{ url_for('logout') }}">Dang xuat</a>
+        <h4>Ban muon tu van gi hom nay:</h4>
+        <span><a href="{{ url_for('lover') }}">Lover</a></span>
+    {% else %}
+        <h3>Xin chao, Khach</h3>
+        <a href="{{ url_for('login') }}">Dang nhap</a>
+        <a href="{{ url_for('register') }}">Dang ky</a>
+    {% endif %}
+
 </body>
 </html>

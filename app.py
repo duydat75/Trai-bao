@@ -1,6 +1,7 @@
 from flask import *
 import mlab
 from models.user import User
+from models.lover import Lover
 from gmail import *
 
 app = Flask(__name__)
@@ -11,6 +12,34 @@ app.secret_key = "Dat ultra super handsome"
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/lover', methods=["GET", "POST"])
+def lover():
+    if request.method == "GET":
+        return render_template('lover.html')
+    elif request.method == "POST":
+        form = request.form 
+        user_id = session['user_id']
+        fullname = form['fullname']
+        dob = form['dob']
+        gender = form['gender']
+        city = form['city']
+        like = form.getlist('like')
+        hate = form.getlist('hate')
+        description = form['description']
+
+        new_lover = Lover(
+            user_id = user_id,
+            fullname = fullname,
+            dob = dob,
+            gender = gender,
+            city = city,
+            like = like,
+            hate = hate,
+            description = description
+        )
+        new_lover.save()
+        return "Saved"
 
 @app.route('/register', methods = ['POST','GET'])
 def register():
