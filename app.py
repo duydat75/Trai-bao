@@ -9,14 +9,10 @@ mlab.connect()
 app.secret_key = "Dat ultra super handsome"
 
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def index():
-    return render_template('index.html')
-
-@app.route('/lover', methods=["GET", "POST"])
-def lover():
     if request.method == "GET":
-        return render_template('lover.html')
+        return render_template('index.html')
     elif request.method == "POST":
         form = request.form 
         user_id = session['user_id']
@@ -39,7 +35,11 @@ def lover():
             description = description
         )
         new_lover.save()
-        return "Saved"
+        return redirect(url_for('index'))
+
+@app.route('/#form-lover')
+def lover():
+    return render_template('lover.html')
 
 @app.route('/register', methods = ['POST','GET'])
 def register():

@@ -7,7 +7,6 @@
     <title>Lover</title>
 </head>
 <body>
-    <a href="{{ url_for('index') }}">Back</a>
     <form method="POST">
         <table>
             <tr>
@@ -53,9 +52,11 @@
                 <td><label>Description</label></td>
                 <td><input type="text" name="description"></td>
             </tr>
+            <tr>
+                <td><a href="{{ url_for('index') }}">Back</a></td>
+                <td><button type="submit">Next</button></td>
+            </tr>
         </table>
-
-        <button type="submit">Submit</button>
     </form>
 </body>
 </html>

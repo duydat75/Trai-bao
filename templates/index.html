@@ -5,13 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="../static/js/script.js"></script> -->
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename = 'script.js') }}"></script> -->
+    <script>
+        $(document).ready( function() {
+            $('#next').click(function() {
+                $.ajax("{{ url_for('lover') }}").done(function (reply) {
+                    $('#container').html(reply);
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     {% if session['loggedin'] %}
         <h3>Xin chao, {{ session['user_id'] }}</h3>
         <a href="{{ url_for('logout') }}">Dang xuat</a>
         <h4>Ban muon tu van gi hom nay:</h4>
-        <span><a href="{{ url_for('lover') }}">Lover</a></span>
+        <!-- <span><a href="{{ url_for('lover') }}">Lover</a></span> -->
+        <input type="button" id="next" value="Lover" />
+        <div id="container"></div>
     {% else %}
         <h3>Xin chao, Khach</h3>
         <a href="{{ url_for('login') }}">Dang nhap</a>
