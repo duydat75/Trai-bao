@@ -5,4 +5,6 @@ class User(Document):
     email = StringField()
     username = StringField()
     password = StringField()
-
+    phone = StringField()
+    gender = BooleanField()
+    dob = StringField()

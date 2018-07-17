@@ -48,8 +48,11 @@ def register():
     elif request.method == 'POST':
         form = request.form
         fullname = form['username']
+        dob = form['day']+"/"+form['month']+"/"+form['year'] 
+        gender = form['gender']
         email = form['email']
         username = form['username']
+        phone = form['phone']
         password = form['password']
         confirmpassword = form['confirmpassword']
         if fullname == '' or email == '' or username =='' or password =='':
@@ -71,7 +74,10 @@ def register():
                 fullname= fullname,
                 email = email,
                 username = username,
-                password = password
+                password = password,
+                phone= phone,
+                dob=dob,
+                gender = gender
             )
             new_user.save()
             return redirect('/')

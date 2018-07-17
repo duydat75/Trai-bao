@@ -1,46 +1,25 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="../static/css/login.css">
+<!------ Include the above in your HEAD tag ---------->
 
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="pr-wrap">
-                <div class="pass-reset">
-                    <label>
-                        Enter the email you signed up with</label>
-                    <input type="email" placeholder="Email" />
-                    <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" />
-                </div>
-            </div>
-            <div class="wrap">
-                <p class="form-title">
-                    Sign In</p>
-                <form method= "POST" class="login">
-                <input type="text" placeholder="Username" name="username">
-                <input type="password" placeholder="Password" name="password" />
-                <input type="submit" value="Sign In" class="btn btn-success btn-sm" />
-                <div class="remember-forgot">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="checkbox">
-                                <div>
-                                    <a href="{{ url_for('register') }}" class="forgot-pass">Resgister</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 forgot-pass-content">
-                            <a href="{{ url_for('forgotpassword') }}" class="forgot-pass">Forgot Password</a>
-                        </div>
-                    </div>
-                </div>
-                </form>
-            </div>
-        </div>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Icon -->
+    <div class="fadeIn first mb-3 mt-3">
+      <img src="https://www.acelerartech.com/wp-content/uploads/2017/01/Virtual-Assistant-single.png" id="icon" alt="User Icon" />
     </div>
-    
+    <!-- Login Form -->
+    <form method="post">
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username">
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="Password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+        <a class="underlineHover" href="{{ url_for('register') }}">Resgister</a>
+        <a class="underlineHover" href="{{ url_for('forgotpassword') }}">Forgot Password?</a>
+    </div>
+  </div>
 </div>
-
