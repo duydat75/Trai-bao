@@ -231,6 +231,7 @@ html {
     -moz-animation-delay: 1s;
     animation-delay: 1s;
     margin:3% 0%;
+    background-color: rgb(33, 230, 59);
   }
   
   /* Simple CSS3 Fade-in Animation */
@@ -265,3 +266,7 @@ html {
     width:60%;
   }
   
+.font-play{
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 150%;
+}
