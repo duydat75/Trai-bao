@@ -21,3 +21,5 @@ gunicorn
 # ----------------------
 addict
 shortuuid
+gmail
+datetime

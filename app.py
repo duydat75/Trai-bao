@@ -43,6 +43,7 @@ def index():
         new_lover.save()
         return redirect(url_for('index'))
     
+    
 
 @app.route('/home')
 def home():
