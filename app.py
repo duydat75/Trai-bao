@@ -3,6 +3,8 @@ import mlab
 from models.user import User
 from models.lover import Lover
 from gmail import *
+from datetime import datetime  
+from datetime import timedelta  
 
 app = Flask(__name__)
 mlab.connect()
@@ -17,7 +19,9 @@ def index():
         form = request.form 
         user_id = session['user_id']
         fullname = form['fullname']
-        dob = form['dob']
+        date = form['date']
+        year = form['year']
+        age = 2018 - int(year)
         gender = form['gender']
         city = form['city']
         like = form.getlist('like')
@@ -27,7 +31,9 @@ def index():
         new_lover = Lover(
             user_id = user_id,
             fullname = fullname,
-            dob = dob,
+            date = date,
+            year = year,
+            age = age,
             gender = gender,
             city = city,
             like = like,
@@ -36,6 +42,11 @@ def index():
         )
         new_lover.save()
         return redirect(url_for('index'))
+    
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 @app.route('/#form-lover')
 def lover():

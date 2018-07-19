@@ -4,7 +4,9 @@ from models.user import User
 class Lover(Document):
     user_id = ReferenceField(User)
     fullname = StringField()
-    dob = DateTimeField()
+    date = DateTimeField()
+    year = IntField()
+    age = IntField()
     gender = IntField()
     city = StringField()
     like = ListField()

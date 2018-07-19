@@ -1,0 +1,63 @@
+.box1{
+  background-image: url("../image/Dark-Wallpaper-Portrait.jpg");
+  background-size: cover;
+}
+.box2{
+  height: 15%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.box3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lobster', cursive;
+}
+
+.box4{
+  margin-left: 32%;
+  width: 38%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  font-family: 'Montserrat', sans-serif;
+}
+.box5{
+  height: 80%;
+  display: flex;
+  flex-flow: column;
+}
+.box6{
+  padding-top:10%;
+  font-size: 260%;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+.box7{
+  font-size:450%;
+  font-family: 'PT Sans Caption', sans-serif;
+
+}
+.box8{
+  padding: 5% 15%;
+  font-family: 'PT Sans Caption', sans-serif;
+  font-size: 100%;
+}
+.box1-1{
+  height: 100%;
+}
+.box12{
+  height: 40%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.box13{
+  height: 60%;
+}
+.font1{
+  font-family: 'PT Sans Caption', sans-serif;
+}
