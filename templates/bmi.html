@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <title>BMI Calculator</title>
+  
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+    <!-- FancyBox -->
+   
+    <!-- Styles -->
+    <link rel="stylesheet" href="../static/css/agency.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <div id="BMI_Calculator">
+            <form class="bmicalc-form bg-light" data-toggle="validator" role="form">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        <h4 class="bmicalc-title">BMI Calculator</h4>
+                    </div>
+                    <div class="panel-body ml-2 mr-2">
+                        <div class="form-group">
+                            <label for="gender" class="control-label">Gender:</label>
+                            <div id="gender">
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" value="Male" required> Male
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender" value="Female" required> Female
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="age" class="control-label">Age:</label>
+                            <select id="age" class="form-control" required>
+                                <option value="">Age (years)</option>
+                                <option value="19 - 24">19 - 24</option>
+                                <option value="25 - 34">25 - 34</option>
+                                <option value="35 - 44">35 - 44</option>
+                                <option value="45 - 54">45 - 54</option>
+                                <option value="55 - 64">55 - 64</option>
+                                <option value="&gt; 64">&gt; 64</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight" class="control-label">Weight:</label>
+                            <input id="weight" type="text" class="form-control" placeholder="weight (kg)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="height" class="control-label">Height:</label>
+                            <input id="height" type="text" class="form-control" placeholder="height (cm)" required>
+                        </div>
+                        <button type="submit" class="btn-block btn-lg btn-warning">Calculate</button>
+                    </div>
+                    <div class="panel-footer text-center">
+                        <label class="bmicalc-result-label text-info">BMI Score</label>
+                        <div class="well well-sm bmicalc-result">0.00</div>
+                        <label class="bmicalc-description-label text-info">Interpretation</label>
+                        <div class="well well-sm bmicalc-description ">&nbsp;</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="BMI_Tables" style="display: none;">
+            <table id="BMI_Table_Men" class="table table-bordered table-hover">
+                <tbody>
+                    <tr>
+                        <th scope="col" width="12%">&nbsp;</th>
+                        <th scope="col" width="22%" class="bg-info text-info">Age (in years)</th>
+                        <th scope="col" width="22%" class="bg-light text-warning">Underweight</th>
+                        <th scope="col" width="22%" class="bg-light text-success">Normal Weight</th>
+                        <th scope="col" width="22%" class="bg-light text-danger">Over Weight</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="7" scope="row">Men</th>
+                    </tr>
+                    <tr>
+                        <td>19 - 24</td>
+                        <td>BMI &lt; 20</td>
+                        <td>BMI 20 - 25</td>
+                        <td>BMI &gt; 25</td>
+                    </tr>
+                    <tr>
+                        <td>25 - 34</td>
+                        <td>BMI &lt; 21</td>
+                        <td>BMI 21 - 26</td>
+                        <td>BMI &gt; 26</td>
+                    </tr>
+                    <tr>
+                        <td>35 - 44</td>
+                        <td>BMI &lt; 22</td>
+                        <td>BMI 22 - 27</td>
+                        <td>BMI &gt; 27</td>
+                    </tr>
+                    <tr>
+                        <td>45 - 54</td>
+                        <td>BMI &lt; 23</td>
+                        <td>BMI 23 - 28</td>
+                        <td>BMI &gt; 28</td>
+                    </tr>
+                    <tr>
+                        <td>55 - 64</td>
+                        <td>BMI &lt; 24</td>
+                        <td>BMI 24 - 29</td>
+                        <td>BMI &gt; 29</td>
+                    </tr>
+                    <tr>
+                        <td>&gt; 64</td>
+                        <td>BMI &lt; 25</td>
+                        <td>BMI 25 - 30</td>
+                        <td>BMI &gt; 30</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="BMI_Table_Women" class="table table-bordered table-hover">
+                <tbody>
+                    <tr>
+                        <th scope="col" width="12%">&nbsp;</th>
+                        <th scope="col" width="22%" class="bg-info text-info">Age (in years)</th>
+                        <th scope="col" width="22%" class="bg-light text-warning">Underweight</th>
+                        <th scope="col" width="22%" class="bg-light text-success">Normal Weight</th>
+                        <th scope="col" width="22%" class="bg-light text-danger">Over Weight</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="7" scope="row">Women</th>
+                    </tr>
+                    <tr>
+                        <td>19 - 24</td>
+                        <td>BMI &lt; 19</td>
+                        <td>BMI 19 - 24</td>
+                        <td>BMI &gt; 24</td>
+                    </tr>
+                    <tr>
+                        <td>25 - 34</td>
+                        <td>BMI &lt; 20</td>
+                        <td>BMI 20 - 25</td>
+                        <td>BMI &gt; 25</td>
+                    </tr>
+                    <tr>
+                        <td>35 - 44</td>
+                        <td>BMI &lt; 21</td>
+                        <td>BMI 21 - 26</td>
+                        <td>BMI &gt; 26</td>
+                    </tr>
+                    <tr>
+                        <td>45 - 54</td>
+                        <td>BMI &lt; 22</td>
+                        <td>BMI 22 - 27</td>
+                        <td>BMI &gt; 27</td>
+                    </tr>
+                    <tr>
+                        <td>55 - 64</td>
+                        <td>BMI &lt; 23</td>
+                        <td>BMI 23 - 28</td>
+                        <td>BMI &gt; 28</td>
+                    </tr>
+                    <tr>
+                        <td>&gt; 64</td>
+                        <td>BMI &lt; 24</td>
+                        <td>BMI 24 - 29</td>
+                        <td>BMI &gt; 29</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Validator -->
+    <script src="assets/plugins/bootstrap-validator/validator.min.js"></script>
+    <!-- FancyBox -->
+    <script src="assets/plugins/fancyBox/jquery.fancybox.pack.js"></script>
+    <!-- BMI Calculator -->
+    <script src="../static/js/bmi.js"></script>
+</body>
+
+</html>

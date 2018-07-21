@@ -43,7 +43,7 @@ def index():
         new_lover.save()
         return redirect(url_for('index'))
     
-    
+
 
 @app.route('/home')
 def home():
@@ -158,6 +158,18 @@ def forgotpassword():
             msg=Message('Khôi phục mật khẩu',to=email, html=html_content)
             gmail.send(msg)
             return ('/')
+
+@app.route('/health')
+def health():
+    return render_template('health.html')
+
+@app.route('/health/bmi')
+def bmi():
+    return render_template('bmi.html')
+
+@app.route('/health/kcal')
+def kcal():
+    return render_template('kcal.html')
 
 if __name__ == '__main__':
   app.run(debug=True)

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hello!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="../static/vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/agency.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="{{ url_for('index') }}">Virtual Assistant</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="#about">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="#team">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<section class="bg-light">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Làm thế nào để giảm cân ?</h2>
+        <h4 class="text-muted mt-5">Mọi điều bạn được nghe về cách giảm cân đa phần là sai </h4>
+        <h4 class="text-muted mt-5">Vấn đề không phải bạn ăn gì</h4>
+        <h4 class="text-muted mt-5">Hay tập luyện như thế nào</h4>
+        <h3 class="mt-5">Calorie mới là thứ quyết định tất cả!</h3>
+        <h4></h4>
+    </div>
+</div>
+</section>
+
+<section class="bg-white">
+<div class="container">
+<h4>Chúng tôi sẽ cung cấp 3 bước đơn giản nhất để kiểm soát cân nặng. Dựa trên các công cụ tính toán và cơ sở khoa học.</h4>
+<h5>Bước 1: Kiểm tra tình trạng sức khoẻ của bạn.</h5>
+<div>BMI là chỉ số khối của cơ thể, được dùng để đánh giá mức độ cơ thể là gầy hay béo của một người qua chiều cao và cân nặng. Nguồn gốc của chỉ số này xuất phát từ một nghiên cứu do nhà bác học người Bỉ tên Adolphe Quetelet đưa ra năm 1832.</div>
+<div>Đây sẽ là công cụ tính BMI cho bạn:</div>
+<div class="mt-5">{% include 'bmi.html' %}</div>
+<div>BMI chỉ mang tính chất tham khảo. Dựa vào BMI bạn sẽ tương đối biết được mình nên tăng hay giảm cân.</div>
+<div>Bước sau mới là quan trọng.</div>
+<h5 class="mt-5">Bước 2: Tính toán lượng calorie tiêu thụ hằng ngày</h5>
+<div>Việc trao đổi chất liên quan đến các quá trình mà cơ thể cần để hoạt động. Tỷ lệ trao đổi chất cơ bản (BMR – Basal Metabolic Rate) là lượng calo mà cơ thể cần để duy trì các hoạt động chức năng: thở, tuần hoàn máu, kiểm soát nhiệt độ cơ thể, tăng trưởng tế bào, não và các cơ quan thần kinh, co cơ. BMR cũng ảnh hưởng đến tỉ lệ đốt cháy calo để giữ cân hay giảm cân. Số BMR của bạn sẽ chiếm 60%-70% tổng lượng calo mà bạn đốt 1 ngày, điều này phụ thuộc vào 1 số yếu tố khác nhau và cường độ vận động</div>
+<div>Công cụ tính BMR theo chỉ số cơ thể và mức hoạt động của bạn.</div>
+<div class="mt-5">{% include'kcal.html' %}</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+        <span class="copyright">Copyright &copy; VirtualAssistant 2018</span>
+        </div>
+        <div class="col-md-4">
+        <ul class="list-inline social-buttons">
+            <li class="list-inline-item">
+            <a href="#">
+                <i class="fa fa-twitter"></i>
+            </a>
+            </li>
+            <li class="list-inline-item">
+            <a href="#">
+                <i class="fa fa-facebook"></i>
+            </a>
+            </li>
+            <li class="list-inline-item">
+            <a href="#">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            </li>
+        </ul>
+        </div>
+        <div class="col-md-4">
+        <ul class="list-inline quicklinks">
+            <li class="list-inline-item">
+            <a href="#">Privacy Policy</a>
+            </li>
+            <li class="list-inline-item">
+            <a href="#">Terms of Use</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="../static/vendor/jquery/jquery.js"></script>
+<script src="../static/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="../static/vendor/jquery-easing/jquery.easing.js"></script>
+
+<!-- Contact form JavaScript -->
+<script src="../static/js/jqBootstrapValidation.min.js"></script>
+<script src="../static/js/contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="../static/js/agency.js"></script>
+
+
+  </body>
+
+</html>
