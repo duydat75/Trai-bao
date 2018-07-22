@@ -10,5 +10,4 @@ class Lover(Document):
     gender = IntField()
     city = StringField()
     like = ListField()
-    hate = ListField()
     description = StringField()
