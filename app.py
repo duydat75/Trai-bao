@@ -159,6 +159,7 @@ def forgotpassword():
 def lover():
     all_lover = Lover.objects(user_id = session['user_id'])
     
+    
     return render_template('lover.html', all_lover = all_lover)
 
 @app.route('/health')

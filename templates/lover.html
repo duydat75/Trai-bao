@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+{% include 'head.html' %}
 <body>
     {% for item in all_lover %}
-    <div> {{item.fullname}}</div>
-    <div>{{item.age}}</div>
-    <div>{{item.like}}</div>
-
-    {% endfor %}
+        <div id="view"> {{item.fullname}}</div>
+        <div class="d-block d-md-none">{{item.age}}
+        {%for it in item.like%}
+            {% if it == '2' %}
+                an uong
+            {% elif it == '3' %}
+                xoac
+            {% endif %}
+        {%endfor%}
+        </div>
+            </div>
+        
+    {%endfor%}
 </body>
 </html>
