@@ -28,7 +28,6 @@ def love():
         gender = form['gender']
         city = form['city']
         like = form.getlist('like')
-        hate = form.getlist('hate')
         description = form['description']
 
         new_lover = Lover(
@@ -40,7 +39,6 @@ def love():
             gender = gender,
             city = city,
             like = like,
-            hate = hate,
             description = description
         )
         new_lover.save()
