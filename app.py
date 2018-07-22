@@ -158,9 +158,8 @@ def forgotpassword():
 @app.route('/lover')
 def lover():
     all_lover = Lover.objects(user_id = session['user_id'])
-    for item in all_lover:
-        like = item.like
-    return render_template('lover.html', all_lover = all_lover, like = like)
+    
+    return render_template('lover.html', all_lover = all_lover)
 
 @app.route('/health')
 def health():
