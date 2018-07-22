@@ -16,7 +16,6 @@
     <script>
         $(document).ready( function() {
             $('#next').click(function() {
-                $('#user-step-1').show();
                 $.ajax("{{ url_for('lover') }}").done(function (reply) {
                     $('#bot-step-2').html(reply);
                 });
@@ -26,9 +25,13 @@
 </head>
 <body>
     <div class="container">
-        <center class="p-4"><h1>LOVE ASSISTANT</h1></center>
         {% if session['loggedin'] %}
         <div class="col-md-12">
+            <center class="p-4">
+                <h1>LOVE ASSISTANT</h1>
+                <small>By: Team Giải Nhất</small>
+            </center>
+            
             <div id="bot-step-1" class="d-flex p-3" style="justify-content: flex-start">
                 <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
                 <div style="display: block">
@@ -41,7 +44,8 @@
                 </div>
             </div>
             <div id="user-step-1" class="d-flex p-3" style="justify-content: flex-end">
-                <span class="user" style="background-color: transparent"><input type="button" id="next" value="Lover" /></span>
+                <span class="user bg-transparent"><input type="button" id="next" value="Lover" /></span>
+                <span class="user bg-transparent"><input type="button" id="calendar" value="Calendar"></span>
                 <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">
             </div>
             <div id="bot-step-2"></div>
