@@ -114,7 +114,7 @@ def login():
 @app.route('/logout')
 def logout():
     del session['loggedin']
-    return redirect('/index')
+    return redirect('/')
 
 @app.route('/changepassword', methods = ['POST','GET'])
 def changepassword():
