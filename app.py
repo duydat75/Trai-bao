@@ -11,8 +11,8 @@ mlab.connect()
 app.secret_key = "Dat ultra super handsome"
 
 @app.route('/')
-def home():
-    return render_template('home.html')
+def index():
+    return render_template('index.html')
 
 @app.route('/love', methods=["GET", "POST"])
 def love():
