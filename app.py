@@ -10,8 +10,11 @@ app = Flask(__name__)
 mlab.connect()
 app.secret_key = "Dat ultra super handsome"
 
+@app.route('/')
+def home():
+    return render_template('home.html')
 
-@app.route('/', methods=["GET", "POST"])
+@app.route('/lover', methods=["GET", "POST"])
 def index():
     if request.method == "GET":
         return render_template('index.html')
@@ -43,11 +46,6 @@ def index():
         new_lover.save()
         return redirect(url_for('index'))
     
-
-
-@app.route('/home')
-def home():
-    return render_template('home.html')
 
 @app.route('/#form-lover')
 def lover():
