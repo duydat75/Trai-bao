@@ -51,7 +51,7 @@ def home():
 
 @app.route('/#form-lover')
 def lover():
-    return render_template('lover.html')
+    return render_template('newlover.html')
 
 @app.route('/register', methods = ['POST','GET'])
 def register():
@@ -158,6 +158,8 @@ def forgotpassword():
             msg=Message('Khôi phục mật khẩu',to=email, html=html_content)
             gmail.send(msg)
             return ('/')
+
+@app.route('/lover')
 
 @app.route('/health')
 def health():
