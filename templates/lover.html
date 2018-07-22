@@ -3,8 +3,8 @@
 {% include 'head.html' %}
 <body>
     {% for item in all_lover %}
-        <div id="view"> {{item.fullname}}</div>
-        <div class="d-block d-md-none">{{item.age}}
+    <div onclick="toggleDisplay('{{loop.index}}')">{{item.fullname}}</div>
+        <div id="lover-{{loop.index}}" style="display:none" >{{item.age}}
         {%for it in item.like%}
             {% if it == '2' %}
                 an uong
@@ -14,7 +14,18 @@
         {%endfor%}
         </div>
             </div>
-        
     {%endfor%}
+    <script>
+        function toggleDisplay(id) {
+            // console.log(id);
+            
+            var x = document.getElementById("lover-" + id);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
