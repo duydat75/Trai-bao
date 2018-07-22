@@ -7,8 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    {% for item in all_lover %}
-    <div> {{item.fullname}}</div>
-    {% endfor %}
+    {{like}}
+    {% for i in like %}
+    {% if i == 2 %}
+    shopping
+    {% elif i == 3 %}
+    Xoac
+    {% endif %}
+    {%endfor%}
+    
 </body>
 </html>

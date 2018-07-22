@@ -114,7 +114,7 @@ def login():
 @app.route('/logout')
 def logout():
     del session['loggedin']
-    return redirect(url_for('index.html'))
+    return redirect('/index')
 
 @app.route('/changepassword', methods = ['POST','GET'])
 def changepassword():
@@ -157,9 +157,10 @@ def forgotpassword():
 
 @app.route('/lover')
 def lover():
-    all_lover = Lover.objects(user_id = '5b50ab59c0bfbc1705d47c72')
-
-    return render_template('lover.html', all_lover = all_lover)
+    all_lover = Lover.objects(user_id = session['user_id'])
+    for item in all_lover:
+        like = item.like
+    return render_template('lover.html', all_lover = all_lover, like = like)
 
 @app.route('/health')
 def health():
