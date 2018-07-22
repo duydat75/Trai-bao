@@ -14,10 +14,10 @@ app.secret_key = "Dat ultra super handsome"
 def home():
     return render_template('home.html')
 
-@app.route('/lover', methods=["GET", "POST"])
-def index():
+@app.route('/love', methods=["GET", "POST"])
+def love():
     if request.method == "GET":
-        return render_template('index.html')
+        return render_template('love.html')
     elif request.method == "POST":
         form = request.form 
         user_id = session['user_id']
@@ -44,11 +44,11 @@ def index():
             description = description
         )
         new_lover.save()
-        return redirect(url_for('index'))
+        return redirect(url_for('love'))
     
 
 @app.route('/#form-lover')
-def lover():
+def newlover():
     return render_template('newlover.html')
 
 @app.route('/register', methods = ['POST','GET'])
@@ -158,6 +158,8 @@ def forgotpassword():
             return ('/')
 
 @app.route('/lover')
+def lover():
+    return "sakjas"
 
 @app.route('/health')
 def health():

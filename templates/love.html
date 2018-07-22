@@ -11,17 +11,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../static/css/style.css">
-    <!-- <script type="text/javascript" src="../static/js/script.js"></script> -->
+    <script type="text/javascript" src="../static/js/script.js"></script>
     <!-- <script type="text/javascript" src="{{ url_for('static', filename = 'script.js') }}"></script> -->
-    <script>
+    <!-- <script>
         $(document).ready( function() {
             $('#next').click(function() {
-                $.ajax("{{ url_for('lover') }}").done(function (reply) {
+                $.ajax("{{ url_for('newlover') }}").done(function (reply) {
                     $('#bot-step-2').html(reply);
                 });
             });
         });
-    </script>
+    </script> -->
+    
 </head>
 <body>
     <div class="container">
@@ -44,8 +45,9 @@
                 </div>
             </div>
             <div id="user-step-1" class="d-flex p-3" style="justify-content: flex-end">
-                <span class="user bg-transparent"><input type="button" id="next" value="Lover" /></span>
+                <span class="user bg-transparent"><input type="button" id="next" value="New Lover" /></span>
                 <span class="user bg-transparent"><input type="button" id="calendar" value="Calendar"></span>
+                <span class="user bg-transparent"><input type="button" id="next1" value="Lover" /></span>
                 <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">
             </div>
             <div id="bot-step-2"></div>
