@@ -20,6 +20,12 @@
                     $('#bot-step-2').html(reply);
                 });
             });
+
+            $('#lover').click(function(){
+                $.ajax("{{ url_for('lover') }}").done(function (lover){
+                    $('#bot-step-3').html(lover);
+                });
+            });
         });
     </script>
     
@@ -47,10 +53,12 @@
             <div id="user-step-1" class="d-flex p-3" style="justify-content: flex-end">
                 <span class="user bg-transparent"><input type="button" id="next" value="New Lover" /></span>
                 <span class="user bg-transparent"><input type="button" id="calendar" value="Calendar"></span>
+                <span class="user bg-transparent"><input type="button" id="lover" value="Lover"></span>
                 <a href="{{url_for('lover')}}">Lover </a>
                 <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">
             </div>
             <div id="bot-step-2"></div>
+            <div id="bot-step-3"></div>
         {% else %}
             <h3>Xin chao, Khach</h3>
             <a href="{{ url_for('login') }}">Dang nhap</a>
