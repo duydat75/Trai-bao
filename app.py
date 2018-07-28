@@ -186,6 +186,9 @@ def lover():
 @app.route('/nhahang')
 def nhahang():
     return render_template('nhahang.html')
+@app.route('/nhanghi')
+def nhanghi():
+    return render_template('nhanghi.html')
 
 @app.route('/health')
 def health():
@@ -195,10 +198,10 @@ def health():
 # def bmi():
 #     return render_template('bmi.html')
 
-@app.route('/gowhere')
-def bmi():
-    all_lover = Lover.objects(user_id = session['user_id'])
-    return render_template('gowhere.html')
+# @app.route('/gowhere')
+# def bmi():
+#     all_lover = Lover.objects(user_id = session['user_id'])
+#     return render_template('gowhere.html')
 
 app.run(debug=True)
  
