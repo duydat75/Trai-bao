@@ -87,6 +87,8 @@
                 <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
 
             </div>
+            {% elif target != NULL %}
+            <div id="user-step-2" class="user">session['target.fullname']</div>
             {% endif %}
         {% else %}
         <div id="bot-step-1" class="bot">

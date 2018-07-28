@@ -156,12 +156,18 @@ def forgotpassword():
             gmail.send(msg)
             return ('/')
 
-@app.route('/lover')
+@app.route('/lover', methods = ['POST','GET'])
 def lover():
-    all_lover = Lover.objects(user_id = session['user_id'])
-    
-    
-    return render_template('lover.html', all_lover = all_lover)
+    if request.method == 'GET':
+        all_lover = Lover.objects(user_id = session['user_id'])
+        return render_template('lover.html', all_lover = all_lover)
+    elif request.method == 'POST':
+        form = request.form
+        target = form['target']
+        one_lover = Lover.objects(id=target)
+        # target.fullname = one_lover.fullname
+        # session['target.fullname'] = target.fullname
+        return target
 
 @app.route('/health')
 def health():
