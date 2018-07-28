@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxNhà NghỉsNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/css/style.css">
     <script type="text/javascript" src="../static/js/script.js"></script>
 </head>
@@ -26,7 +26,7 @@
         <div class="row">
         <div class="col-md-8 offset-md-2 chatbot">
             <div id="bot-step-1" class="bot">
-                <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
+                <img src="../static/image/bot_icon.gif" alt="" class="avatar mr-2">
                 <div class="preload-left">
                     <img src="static/image/loading-white-d.gif" alt="" width="30%">
                 </div>
@@ -51,7 +51,7 @@
                 <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">  
             </div>
             <div id="bot-step-2" class="bot">
-                <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2" style="display:none">
+                <img src="../static/image/bot_icon.gif" alt="" class="avatar mr-2" style="display:none">
                 <div>
                 <div id="bot-step-2-1"></div>
                 <div id="bot-step-2-2"></div>
@@ -59,17 +59,18 @@
             </div>
             <div id="bot-step-3" class="bot">
                 {% if fullname != NULL %}
-                    <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
+                    <img src="../static/image/bot_icon.gif" alt="" class="avatar mr-2">
                     <div class="bot-mess">
-                        <span>Đối tượng: {{ fullname }} - {{ age }} tuổi - thích 
+                        <span>Đối tượng: {{ fullname }} - {{ age }} tuổi - Sở Thích: <br>
                         {% for like in like %}
                             {% if like == '1' %}
-                                ăn uống
+                                Ăn Uống 
                             {% elif like == '2' %}
-                                shopping
+                                Mua Sắm 
                             {% elif like == '3' %}
-                                xoạc
+                               Xoạc
                             {% endif %}
+                            <br>
                         {%endfor%}
                         </span>
                     </div>
@@ -89,11 +90,12 @@
 
             </div>
             <div id="bot-step-4" class="bot" style="display:none">
-                <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
+                <img src="../static/image/bot_icon.gif" alt="" class="avatar mr-2">
                 <div class="bot-mess">
                     {%if gender == '0' %}
                         {%if age < 24 %}
                         Tôi có gợi ý cho bạn: 
+                        <br>
                             {%for like in like%}
                                 {%if like == '1'%}
                                 Nhà Hàng
@@ -102,6 +104,7 @@
                                 {%elif like == '3'%}
                                 Nhà Nghỉ
                                 {%endif%}
+                                <br>
                             {%endfor%}
                         {%endif%}
                     {%endif%}
@@ -138,11 +141,11 @@
                         {%if age >= 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                <a>L4</a>
+                                <a>Nhà Hàng</a>
                                 {%elif like == '2'%}
-                                <a>L5</a>
+                                <a>Siêu Thị</a>
                                 {%elif like == '3'%}
-                                <A>L6</A>
+                                <A>Nhà Nghỉ</A>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -213,7 +216,7 @@
             {% endif %}
         {% else %}
         <div id="bot-step-1" class="bot">
-            <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
+            <img src="../static/image/bot_icon.gif" alt="" class="avatar mr-2">
             <div class="bot">
                 <h3>Xin chào! Tôi là Bot. Bạn hãy </h3>
                 <span class="user-mess bg-transparent"><a href="{{ url_for('login') }}">Dang nhap</a></span>

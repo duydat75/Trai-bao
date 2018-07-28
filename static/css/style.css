@@ -1,8 +1,13 @@
 /* index */
 .avatar{
     border-radius:50%;
-    width:50px;
+    width: 50px;
     height:50px;
+}
+
+.bot .avatar{
+    width:100px;
+    height:80px;
 }
 
 .d-flex{
@@ -26,9 +31,9 @@
     justify-content: flex-start;
 }
 .bot-mess {
-    background-color: rgb(250, 60, 76);
+    background-color: #fed136;
     padding:10px;
-    color:rgb(255, 255, 255);
+    color:black;
     border-radius: 20px;
     margin-bottom:7px;
 }
