@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div id="bot-step-3" class="bot">
-                {%if fullname != NULL %}
+                {% if fullname != NULL %}
                     <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
                     <div class="bot-mess">
                         <span>Đối tượng: {{ fullname }} - {{ age }} tuổi - thích 
@@ -74,7 +74,7 @@
                     </div>
                 {% endif %}
             </div>
-            {% if fullname != NULL %}
+            {% if fullname != NULL or target_id != NULL%}
             <div id="user-step-2" class="user">
                 <span class="user-mess bg-transparent"><input type="button" id="di-dau" value="Đi đâu" /></span>
                 <!-- <span class="user bg-transparent"><input type="button" id="calendar" value="Calendar"></span> -->
@@ -87,47 +87,6 @@
             <div id="bot-step-4" class="bot" style="display:none">
                 <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
                 <div class="bot-mess">
-                    <!-- .... -->
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            {%if gender == '0' %}
-                                {%if age < 24 %}
-                                    {%for like in like%}
-                                    {%if like == '1'%}
-                                        <div class="carousel-item active">
-                                        <img class="d-block w-100" src="..." alt="First slide">
-                                        <a>L1</a>
-                                        </div>
-                                    {%elif like == '2'%}
-                                        <div class="carousel-item active">
-                                        <img class="d-block w-100" src="..." alt="First slide">
-                                        <a>L2</a>
-                                        </div>
-                                    {%elif like == '3'%}
-                                        <div class="carousel-item active">
-                                        <img class="d-block w-100" src="..." alt="First slide">
-                                        <a>L3</a>
-                                        </div>
-                                    {%endif%}
-                                    {%endfor%}
-                                {%endif%}
-                            {%endif%}
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <!-- ...... -->
                     {%if gender == '0' %}
                         {%if age < 24 %}
                             {%for like in like%}
@@ -200,7 +159,7 @@
         {% endif %}
         </div>
     </div>
-    {% if fullname != NULL %}
+    {% if fullname != NULL or target_id != NULL %}
         <style>
             .preload-left, .preload-right{display: none}
         </style>

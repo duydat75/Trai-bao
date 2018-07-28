@@ -20,29 +20,40 @@ def love():
         return render_template('love.html')
     elif request.method == "POST":
         form = request.form 
-        user_id = session['user_id']
-        fullname = form['fullname']
-        date = form['date']
-        year = form['year']
-        age = 2018 - int(year)
-        gender = form['gender']
-        city = form['city']
-        like = form.getlist('like')
-        description = form['description']
-        new_lover = Lover(
-            user_id = user_id,
-            fullname = fullname,
-            date = date,
-            year = year,
-            age = age,
-            gender = gender,
-            city = city,
-            like = like,
-            description = description
-        )
-        new_lover.save()
-        return render_template('love.html', fullname=fullname, age=age, like=like,gender = gender)
-    
+        form_type = form['form_type']
+        if form_type == '1':
+            target = form['target']
+            one_lover = Lover.objects.get(id=target)
+            fullname = one_lover.fullname
+            gender = str(one_lover.gender)
+            age = one_lover.age
+            like = one_lover.like
+            return render_template('love.html',target_id=target, fullname = fullname, age = age, like = like, gender = gender)
+        elif form_type == '2':
+            user_id = session['user_id']
+            fullname = form['fullname']
+            date = form['date']
+            year = form['year']
+            age = 2018 - int(year)
+            gender = form['gender']
+            city = form['city']
+            like = form.getlist('like')
+            description = form['description']
+            
+            new_lover = Lover(
+                user_id = user_id,
+                fullname = fullname,
+                date = date,
+                year = year,
+                age = age,
+                gender = gender,
+                city = city,
+                like = like,
+                description = description
+            )
+            new_lover.save()
+            return render_template('love.html', fullname=fullname, age=age, like=like,gender = gender)
+
 
 @app.route('/newlover')
 def newlover():
@@ -155,22 +166,23 @@ def forgotpassword():
             gmail.send(msg)
             return ('/')
 
-@app.route('/lover', methods = ['POST','GET'])
+@app.route('/lover')
 def lover():
     # all_lover = Lover.objects(user_id = session['user_id'])
     
     # return render_template('lover.html', all_lover = all_lover)
 
-    if request.method == 'GET':
-        all_lover = Lover.objects(user_id = session['user_id'])
-        return render_template('lover.html', all_lover = all_lover)
-    elif request.method == 'POST':
-        form = request.form
-        target = form['target']
-        one_lover = Lover.objects.get(id=target)
-        target_fullname = one_lover.fullname
-        # session['target.fullname'] = target_fullname
-        return render_template(target_fullname)
+    # if request.method == 'GET':
+    all_lover = Lover.objects(user_id = session['user_id'])
+    return render_template('lover.html', all_lover = all_lover)
+    # elif request.method == 'POST':
+    #     form = request.form
+    #     target = form['target']
+    #     one_lover = Lover.objects.get(id=target)
+    #     target_fullname = one_lover.fullname
+    #     session['target.fullname'] = target_fullname
+    #     return render_template('love.html',target_id=target)
+
 
 
 @app.route('/health')
