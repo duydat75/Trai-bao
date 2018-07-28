@@ -28,6 +28,10 @@ $(document).ready( function() {
     $("#nha-nghi").on("click", function() {
         $("#bot-step-5").load("nhanghi");
     })
+
+    $("#sieu-thi").on("click", function() {
+        $("#bot-step-5").load("sieuthi");
+    })
     
     $("#noi-gi").on("click",function(){
         $("#bot-step-6").load("noigi");
