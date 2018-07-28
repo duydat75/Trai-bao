@@ -194,6 +194,10 @@ def nhanghi():
 def health():
     return render_template('health.html')
 
+@app.route('/noigi')
+def noigi():
+    return render_template('noigi.html')
+    
 # @app.route('/health/bmi')
 # def bmi():
 #     return render_template('bmi.html')

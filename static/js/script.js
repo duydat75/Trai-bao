@@ -29,6 +29,9 @@ $(document).ready( function() {
         $("#bot-step-5").load("nhanghi");
     })
     
+    $("#noi-gi").on("click",function(){
+        $("#bot-step-6").load("noigi");
+    })
     // $("#new").on("click", function() {
     //     $("#bot-step-2-3").load("newlover");
     // });

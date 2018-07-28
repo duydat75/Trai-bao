@@ -79,25 +79,28 @@
             <div id="user-step-2" class="user">
                 <span class="user-mess bg-transparent"><input type="button" id="di-dau" value="Đi đâu" /></span>
                 <!-- <span class="user bg-transparent"><input type="button" id="calendar" value="Calendar"></span> -->
-                <span class="user-mess bg-transparent"><input type="button" id="mua-gi" value="Mua gì"></span>
+                <span class="user-mess bg-transparent"><input type="button" id="noi-gi" value="Nói gì"></span>
                 <!-- <div class="preload-right">
                     <img src="static/image/loading-white-d.gif" alt="" width="30%">
                 </div> -->
                 <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">  
+            </div>
+            <div id="bot-step-6" class="bot">
+
             </div>
             <div id="bot-step-4" class="bot" style="display:none">
                 <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
                 <div class="bot-mess">
                     {%if gender == '0' %}
                         {%if age < 24 %}
-                        Toi co goi y cho ban: 
+                        Tôi có gợi ý cho bạn: 
                             {%for like in like%}
                                 {%if like == '1'%}
-                                Nha hang
+                                Nhà Hàng
                                 {%elif like == '2'%}
-                                Sieu thi
+                                Siêu Thị
                                 {%elif like == '3'%}
-                                Nha nghi
+                                Nhà Nghỉ
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -107,11 +110,11 @@
                         {%if age >= 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                Nha hang 
+                                Nhà Hàng 
                                 {%elif like == '2'%}
-                                Sieu thi
+                                Siêu Thị
                                 {%elif like == '3'%}
-                                Nha nghi
+                                Nhà Nghỉ
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -121,11 +124,11 @@
                         {%if age < 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                Nha hang
+                                Nhà Hàng
                                 {%elif like == '2'%}
-                                Nha nghi
+                                Nhà Nghỉ
                                 {%elif like == '3'%}
-                                Sieu thi
+                                Siêu Thị
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -151,11 +154,11 @@
                         {%if age < 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                <span class="user-mess bg-transparent"><input type="button" id="nha-hang" value="Nha hang" /></span>
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-hang" value="Nhà Hàng" /></span>
                                 {%elif like == '2'%}
-                                <span class="user-mess bg-transparent"><input type="button" id="sieu-thi" value="Sieu thi" /></span>
+                                <span class="user-mess bg-transparent"><input type="button" id="sieu-thi" value="Siêu Thị" /></span>
                                 {%elif like == '3'%}
-                                <span class="user-mess bg-transparent"><input type="button" id="nha-nghi" value="Nha Nghi" /></span>
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-nghi" value="Nhà Nghỉ" /></span>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -165,11 +168,11 @@
                         {%if age >= 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                <span class="user-mess bg-transparent"><input type="button" id="nha-hang" value="Nha hang" /></span>
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-hang" value="Nhà Hàng" /></span>
                                 {%elif like == '2'%}
-                                <span class="user-mess bg-transparent"><input type="button" id="sieu-thi" value="Sieu thi" /></span>                                
+                                <span class="user-mess bg-transparent"><input type="button" id="sieu-thi" value="Siêu Thị" /></span>                                
                                 {%elif like == '3'%}
-                                <span class="user-mess bg-transparent"><input type="button" id="nha-nghi" value="Nha Nghi" /></span>
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-nghi" value="Nhà Nghỉ" /></span>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -179,11 +182,11 @@
                         {%if age < 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                <span class="user-mess bg-transparent"><input type="button" id="nha-hang" value="Nha hang" /></span>
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-hang" value="Nhà Hàng" /></span>
                                 {%elif like == '2'%}
-                                <span class="user-mess bg-transparent"><input type="button" id="sieu-thi" value="Sieu thi" /></span>
+                                <span class="user-mess bg-transparent"><input type="button" id="sieu-thi" value="Siêu Thị" /></span>
                                 {%elif like == '3'%}
-                                <span class="user-mess bg-transparent"><input type="button" id="nha-nghi" value="Nha Nghi" /></span>
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-nghi" value="Nhà Nghỉ" /></span>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -193,11 +196,11 @@
                         {%if age >= 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                <span class="user-mess bg-transparent"><input type="button" id="nha-hang" value="Nha hang" /></span>
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-hang" value="Nhà Hàng" /></span>
                                 {%elif like == '2'%}
-                                <span class="user-mess bg-transparent"><input type="button" id="sieu-thi" value="Sieu thi" /></span>
+                                <span class="user-mess bg-transparent"><input type="button" id="sieu-thi" value="Siêu Thị" /></span>
                                 {%elif like == '3'%}
-                                <span class="user-mess bg-transparent"><input type="button" id="nha-nghi" value="Nha Nghi" /></span>
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-nghi" value="Nhà Nghỉ" /></span>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
+        <div class="el"></div>
+    <script>
+    var path = '../static/image/tangai/',
+    imgs = ['1.png','2.png','3.png','4.png','5.png'],
+    i = Math.floor(Math.random()*imgs.length);
+    $('.el').append("<img src='"+path+imgs[i]+"'>").hide().fadeIn(2000);
+</script>
+</body>
+</html>
