@@ -31,10 +31,10 @@
                 </div>
                 <div class="bot-step-1">
                     <div class="bot-mess">
-                        <h5>Xin chào, {{ session['username'] }}</h5>
+                        <span>Xin chào, {{ session['username'] }}</span>
                         <a href="{{ url_for('logout') }}">Logout</a>
                     </div>
-                    <div class="bot-mess"><h5>Tôi là chuyên gia tư vấn tình yêu.<br>Hãy thêm mục tiêu mới hoặc chọn lại mục tiêu đã thêm</h5></div>
+                    <div class="bot-mess"><span>Tôi là chuyên gia tư vấn tình yêu.<br>Hãy thêm mục tiêu mới hoặc chọn lại mục tiêu trước đó</span></div>
                 </div>
             </div>
             <div id="user-step-1" class="user">
@@ -59,7 +59,7 @@
                 {% if fullname != NULL %}
                     <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
                     <div class="bot-mess">
-                        <h5>Đối tượng: {{ fullname }} - {{ age }} tuổi - thích 
+                        <span>Đối tượng: {{ fullname }} - {{ age }} tuổi - thích 
                         {% for like in like %}
                             {% if like == '1' %}
                                 ăn uống
@@ -69,7 +69,7 @@
                                 xoạc
                             {% endif %}
                         {%endfor%}
-                        </h5>
+                        </span>
                     </div>
                 {% endif %}
             </div>
