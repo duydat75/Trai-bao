@@ -83,18 +83,59 @@
                 </div> -->
                 <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">  
             </div>
-            <div id="bot-step-4">
+            <div id="bot-step-4" class="bot">
                 <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
-                <div>
+                <div class="bot-mess">
+                    <!-- .... -->
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            {%if gender == '0' %}
+                                {%if age < 24 %}
+                                    {%for like in like%}
+                                    {%if like == '1'%}
+                                        <div class="carousel-item active">
+                                        <img class="d-block w-100" src="..." alt="First slide">
+                                        <a>L1</a>
+                                        </div>
+                                    {%elif like == '2'%}
+                                        <div class="carousel-item active">
+                                        <img class="d-block w-100" src="..." alt="First slide">
+                                        <a>L2</a>
+                                        </div>
+                                    {%elif like == '3'%}
+                                        <div class="carousel-item active">
+                                        <img class="d-block w-100" src="..." alt="First slide">
+                                        <a>L3</a>
+                                        </div>
+                                    {%endif%}
+                                    {%endfor%}
+                                {%endif%}
+                            {%endif%}
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <!-- ...... -->
                     {%if gender == '0' %}
                         {%if age < 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                L1
+                                <a>L1</a>
                                 {%elif like == '2'%}
-                                L2
+                                <a>L2</a>
                                 {%elif like == '3'%}
-                                L3
+                                <a>L3</a>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -104,11 +145,11 @@
                         {%if age >= 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                L4
+                                <a>L4</a>
                                 {%elif like == '2'%}
-                                L5
+                                <a>L5</a>
                                 {%elif like == '3'%}
-                                L6
+                                <a>L6</a>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -118,11 +159,11 @@
                         {%if age < 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                L4
+                                <a>L4</a>
                                 {%elif like == '2'%}
-                                L5
+                                <a>L5</a>
                                 {%elif like == '3'%}
-                                L6
+                                <a>L6</a>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -132,11 +173,11 @@
                         {%if age >= 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                L4
+                                <a>L4</a>
                                 {%elif like == '2'%}
-                                L5
+                                <a>L5</a>
                                 {%elif like == '3'%}
-                                L6
+                                <a>L6</a>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
