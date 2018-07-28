@@ -43,7 +43,6 @@ def love():
             description = description
         )
         new_lover.save()
-
         return render_template('love.html', fullname=fullname, age=age, like=like,gender = gender)
     
 

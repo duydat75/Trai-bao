@@ -83,18 +83,18 @@
                 </div> -->
                 <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">  
             </div>
-            <div id="bot-step-4">
+            <div id="bot-step-4" class="bot">
                 <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
-                <div>
+                <div class="bot-mess">
                     {%if gender == '0' %}
                         {%if age < 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                L1
+                                <a>L1</a>
                                 {%elif like == '2'%}
-                                L2
+                                <a>L2</a>
                                 {%elif like == '3'%}
-                                L3
+                                <a>L3</a>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -104,11 +104,11 @@
                         {%if age >= 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                L4
+                                <a>L4</a>
                                 {%elif like == '2'%}
-                                L5
+                                <a>L5</a>
                                 {%elif like == '3'%}
-                                L6
+                                <a>L6</a>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -118,11 +118,11 @@
                         {%if age < 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                L4
+                                <a>L4</a>
                                 {%elif like == '2'%}
-                                L5
+                                <a>L5</a>
                                 {%elif like == '3'%}
-                                L6
+                                <a>L6</a>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -132,11 +132,11 @@
                         {%if age >= 24 %}
                             {%for like in like%}
                                 {%if like == '1'%}
-                                L4
+                                <a>L4</a>
                                 {%elif like == '2'%}
-                                L5
+                                <a>L5</a>
                                 {%elif like == '3'%}
-                                L6
+                                <a>L6</a>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
