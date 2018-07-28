@@ -23,7 +23,7 @@
             </center>
         </div>
         {% if session['loggedin'] %}
-        <div class="col-md-8">
+        <div class="col-md-8 chatbot">
             <div id="bot-step-1" class="bot">
                 <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
                 <div class="preload-left">
@@ -83,7 +83,7 @@
                 </div> -->
                 <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">  
             </div>
-            <div id="bot-step-4" class="bot">
+            <div id="bot-step-4" class="bot" style="display:none">
                 <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
                 <div class="bot-mess">
                     {%if gender == '0' %}

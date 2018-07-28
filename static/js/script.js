@@ -10,6 +10,16 @@ $(document).ready( function() {
         $("#bot-step-2 .avatar").show();
         document.getElementById('newlover').disabled = true;
     });
+    $("#di-dau").on("click", function() {
+        $("#bot-step-4").show();
+        // $(".chatbot").append(
+        //     '<div id="user-step-2" class="user">' +
+        //     '<span class="user-mess bg-transparent"><input type="button" id="di-dau" value="Đi đâu" /></span>'+
+        //     '<span class="user-mess bg-transparent"><input type="button" id="mua-gi" value="Mua gì"></span>'+
+        //     '<img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">'+
+        //     '</div>'
+        // );
+    });
     
     // $("#new").on("click", function() {
     //     $("#bot-step-2-3").load("newlover");
