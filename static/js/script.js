@@ -1,5 +1,5 @@
 $(document).ready( function() {
-    $("#new").on("click", function() {
+    $("#newlover").on("click", function() {
         // $("#bot-step-2-1").load("lover");
         $("#bot-step-2-1").load("newlover");
         $("#bot-step-2 .avatar").show();
@@ -8,7 +8,7 @@ $(document).ready( function() {
     $("#lover").on("click", function() {
         $("#bot-step-2-2").load("lover");
         $("#bot-step-2 .avatar").show();
-        document.getElementById('next').disabled = true;
+        document.getElementById('newlover').disabled = true;
     });
     
     // $("#new").on("click", function() {

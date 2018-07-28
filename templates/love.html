@@ -39,7 +39,7 @@
             </div>
             <div id="user-step-1" class="user">
                 <div class="user-step-1">
-                    <span class="user-mess bg-transparent"><input type="button" id="new" value="Mục tiêu mới" /></span>
+                    <span class="user-mess bg-transparent"><input type="button" id="newlover" value="Mục tiêu mới" /></span>
                     <!-- <span class="user bg-transparent"><input type="button" id="calendar" value="Calendar"></span> -->
                     <span class="user-mess bg-transparent"><input type="button" id="lover" value="Mục tiêu trước đó"></span>
                 </div>
@@ -55,8 +55,7 @@
                 <div id="bot-step-2-2"></div>
                 </div>
             </div>
-            <div id="bot-step-3"></div>
-            <div id="bot-step-4" class="bot">
+            <div id="bot-step-3" class="bot">
                 {% if fullname != NULL %}
                     <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
                     <div class="bot-mess">
@@ -72,7 +71,9 @@
                         {%endfor%}
                         </h5>
                     </div>
+                {% endif %}
             </div>
+            {% if fullname != NULL %}
             <div id="user-step-2" class="user">
                 <span class="user-mess bg-transparent"><input type="button" id="di-dau" value="Đi đâu" /></span>
                 <!-- <span class="user bg-transparent"><input type="button" id="calendar" value="Calendar"></span> -->
@@ -81,6 +82,10 @@
                     <img src="static/image/loading-white-d.gif" alt="" width="30%">
                 </div> -->
                 <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">  
+            </div>
+            <div id="bot-step-4">
+                <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
+
             </div>
             {% endif %}
         {% else %}
@@ -107,11 +112,11 @@
         </style>
         <script>
         $(function() {
-            $(".preload-left").fadeOut(2000, function() {
-                $(".bot-step-1").fadeIn(1000);
-                $(".preload-right").fadeIn(1000);
-                $(".preload-right").fadeOut(2000, function() {
-                    $(".user-step-1").fadeIn(1000);
+            $(".preload-left").fadeOut(1000, function() {
+                $(".bot-step-1").fadeIn(500);
+                $(".preload-right").fadeIn(500);
+                $(".preload-right").fadeOut(1000, function() {
+                    $(".user-step-1").fadeIn(500);
                 });
             });
         });
