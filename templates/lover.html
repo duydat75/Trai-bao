@@ -3,7 +3,7 @@
 {% include 'head.html' %}
 <body>
     <div class="bot-mess">
-        <form method="POST" action="{{ url_for('lover')}}">
+        <form method="POST">
             <label>Danh sách mục tiêu đã thêm:</label>
             <br>
             {% for item in all_lover %}
@@ -35,16 +35,28 @@
         {%endfor%}
     </div> -->
     <script>
-        function toggleDisplay(id) {
-            // console.log(id);
+        // function toggleDisplay(id) {
+        //     // console.log(id);
             
-            var x = document.getElementById("lover-" + id);
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        }
+        //     var x = document.getElementById("lover-" + id);
+        //     if (x.style.display === "none") {
+        //         x.style.display = "block";
+        //     } else {
+        //         x.style.display = "none";
+        //     }
+        // }
+        
+        // $(document).ready(function() {
+        //     $(".js-target-item").on("click", function() {
+        //         $(this).toggleClass("checked-item");
+        //     })
+
+        //     $("#chon").on("click", function() {
+        //         var itemId = $(".checked-item").val()
+        //         $("#result").text(itemId);
+        //     })
+        // });
     </script>
+
 </body>
 </html>

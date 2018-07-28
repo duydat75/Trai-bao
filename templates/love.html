@@ -23,7 +23,7 @@
             </center>
         </div>
         {% if session['loggedin'] %}
-        <div class="col-md-8">
+        <div class="col-md-8 chatbot">
             <div id="bot-step-1" class="bot">
                 <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
                 <div class="preload-left">
@@ -42,6 +42,7 @@
                     <span class="user-mess bg-transparent"><input type="button" id="newlover" value="Mục tiêu mới" /></span>
                     <!-- <span class="user bg-transparent"><input type="button" id="calendar" value="Calendar"></span> -->
                     <span class="user-mess bg-transparent"><input type="button" id="lover" value="Mục tiêu trước đó"></span>
+                    
                 </div>
                 <div class="preload-right">
                     <img src="static/image/loading-white-d.gif" alt="" width="30%">
@@ -56,7 +57,7 @@
                 </div>
             </div>
             <div id="bot-step-3" class="bot">
-                {% if fullname != NULL %}
+                {%if fullname != NULL %}
                     <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
                     <div class="bot-mess">
                         <span>Đối tượng: {{ fullname }} - {{ age }} tuổi - thích 
@@ -83,7 +84,7 @@
                 </div> -->
                 <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">  
             </div>
-            <div id="bot-step-4" class="bot">
+            <div id="bot-step-4" class="bot" style="display:none">
                 <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
                 <div class="bot-mess">
                     <!-- .... -->

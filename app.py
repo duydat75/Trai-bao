@@ -29,8 +29,6 @@ def love():
         city = form['city']
         like = form.getlist('like')
         description = form['description']
-
-
         new_lover = Lover(
             user_id = user_id,
             fullname = fullname,
@@ -169,10 +167,10 @@ def lover():
     elif request.method == 'POST':
         form = request.form
         target = form['target']
-        one_lover = Lover.objects(id=target)
-        # target.fullname = one_lover.fullname
-        # session['target.fullname'] = target.fullname
-        return target
+        one_lover = Lover.objects.get(id=target)
+        target_fullname = one_lover.fullname
+        # session['target.fullname'] = target_fullname
+        return render_template(target_fullname)
 
 
 @app.route('/health')
