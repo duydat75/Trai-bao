@@ -12,6 +12,7 @@ $(document).ready( function() {
     });
     $("#di-dau").on("click", function() {
         $("#bot-step-4").show();
+        $("#user-step-3").show();
         // $(".chatbot").append(
         //     '<div id="user-step-2" class="user">' +
         //     '<span class="user-mess bg-transparent"><input type="button" id="di-dau" value="Đi đâu" /></span>'+
@@ -20,6 +21,9 @@ $(document).ready( function() {
         //     '</div>'
         // );
     });
+    $("#nha-hang").on("click", function() {
+        $("#bot-step-5").load("nhahang");
+    })
     
     // $("#new").on("click", function() {
     //     $("#bot-step-2-3").load("newlover");

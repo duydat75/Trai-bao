@@ -89,13 +89,14 @@
                 <div class="bot-mess">
                     {%if gender == '0' %}
                         {%if age < 24 %}
+                        Toi co goi y cho ban: 
                             {%for like in like%}
                                 {%if like == '1'%}
-                                <a>L1</a>
+                                Nha hang
                                 {%elif like == '2'%}
-                                <a>L2</a>
+                                Sieu thi
                                 {%elif like == '3'%}
-                                <a>L3</a>
+                                Nha nghi
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -109,7 +110,7 @@
                                 {%elif like == '2'%}
                                 <a>L5</a>
                                 {%elif like == '3'%}
-                                <a>L6</a>
+                                <a>l6</a>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -123,7 +124,7 @@
                                 {%elif like == '2'%}
                                 <a>L5</a>
                                 {%elif like == '3'%}
-                                <a>L6</a>
+                                <a href="">L6</a>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
@@ -137,15 +138,74 @@
                                 {%elif like == '2'%}
                                 <a>L5</a>
                                 {%elif like == '3'%}
-                                <a>L6</a>
+                                <A>L6</A>
                                 {%endif%}
                             {%endfor%}
                         {%endif%}
                     {%endif%}
                 </div>
             </div>
-            {% elif target != NULL %}
-            <div id="user-step-2" class="user">session['target.fullname']</div>
+            <div id="user-step-3" class="user" style="display:none">
+                    {%if gender == '0' %}
+                        {%if age < 24 %}
+                            {%for like in like%}
+                                {%if like == '1'%}
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-hang" value="Nha hang" /></span>
+                                {%elif like == '2'%}
+                                <span class="user-mess bg-transparent"><input type="button" id="sieu-thi" value="Sieu thi" /></span>
+                                {%elif like == '3'%}
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-nghi" value="Nha Nghi" /></span>
+                                {%endif%}
+                            {%endfor%}
+                        {%endif%}
+                    {%endif%}
+                    
+                    {%if gender == '0' %}
+                        {%if age >= 24 %}
+                            {%for like in like%}
+                                {%if like == '1'%}
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-hang" value="Nha hang" /></span>
+                                {%elif like == '2'%}
+                                <span class="user-mess bg-transparent"><input type="button" id="sieu-thi" value="Sieu thi" /></span>                                
+                                {%elif like == '3'%}
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-nghi" value="Nha Nghi" /></span>
+                                {%endif%}
+                            {%endfor%}
+                        {%endif%}
+                    {%endif%}
+
+                    {%if gender == '1' %}
+                        {%if age < 24 %}
+                            {%for like in like%}
+                                {%if like == '1'%}
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-hang" value="Nha hang" /></span>
+                                {%elif like == '2'%}
+                                <span class="user-mess bg-transparent"><input type="button" id="sieu-thi" value="Sieu thi" /></span>
+                                {%elif like == '3'%}
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-nghi" value="Nha Nghi" /></span>
+                                {%endif%}
+                            {%endfor%}
+                        {%endif%}
+                    {%endif%}
+
+                    {%if gender == '1' %}
+                        {%if age >= 24 %}
+                            {%for like in like%}
+                                {%if like == '1'%}
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-hang" value="Nha hang" /></span>
+                                {%elif like == '2'%}
+                                <span class="user-mess bg-transparent"><input type="button" id="sieu-thi" value="Sieu thi" /></span>
+                                {%elif like == '3'%}
+                                <span class="user-mess bg-transparent"><input type="button" id="nha-nghi" value="Nha Nghi" /></span>
+                                {%endif%}
+                            {%endfor%}
+                        {%endif%}
+                    {%endif%}
+                <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">
+            </div>
+            <div id="bot-step-5" class="bot">
+
+            </div>
             {% endif %}
         {% else %}
         <div id="bot-step-1" class="bot">

@@ -183,7 +183,9 @@ def lover():
     #     session['target.fullname'] = target_fullname
     #     return render_template('love.html',target_id=target)
 
-
+@app.route('/nhahang')
+def nhahang():
+    return render_template('nhahang.html')
 
 @app.route('/health')
 def health():
