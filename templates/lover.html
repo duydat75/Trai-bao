@@ -3,6 +3,24 @@
 {% include 'head.html' %}
 <body>
     <div class="bot-mess">
+        <form method="POST" action="{{ url_for('lover')}}">
+            <label>Danh sách mục tiêu đã thêm:</label>
+            <br>
+            {% for item in all_lover %}
+                <input type="radio" name="target" value="{{item.id}}"> 
+                {{item.fullname}} - 
+                {% if item.gender == 1 %}
+                    Nam
+                {% elif item.gender == 0 %}
+                    Nu
+                {% endif %}
+                - {{item.age}} tuổi
+                <br>
+            {%endfor%}
+            <button type="submit" id="chon">Chọn</button>
+        </form>
+    </div>
+    <!-- <div class="bot-mess">
         {% for item in all_lover %}
         <div onclick="toggleDisplay('{{loop.index}}')">{{item.fullname}}</div>
             <div id="lover-{{loop.index}}" style="display:none" >{{item.age}}
@@ -15,7 +33,7 @@
             {%endfor%}
             </div>
         {%endfor%}
-    </div>
+    </div> -->
     <script>
         function toggleDisplay(id) {
             // console.log(id);

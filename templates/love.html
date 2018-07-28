@@ -85,8 +85,66 @@
             </div>
             <div id="bot-step-4">
                 <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
-                
+                <div>
+                    {%if gender == '0' %}
+                        {%if age < 24 %}
+                            {%for like in like%}
+                                {%if like == '1'%}
+                                L1
+                                {%elif like == '2'%}
+                                L2
+                                {%elif like == '3'%}
+                                L3
+                                {%endif%}
+                            {%endfor%}
+                        {%endif%}
+                    {%endif%}
+                    
+                    {%if gender == '0' %}
+                        {%if age >= 24 %}
+                            {%for like in like%}
+                                {%if like == '1'%}
+                                L4
+                                {%elif like == '2'%}
+                                L5
+                                {%elif like == '3'%}
+                                L6
+                                {%endif%}
+                            {%endfor%}
+                        {%endif%}
+                    {%endif%}
+
+                    {%if gender == '1' %}
+                        {%if age < 24 %}
+                            {%for like in like%}
+                                {%if like == '1'%}
+                                L4
+                                {%elif like == '2'%}
+                                L5
+                                {%elif like == '3'%}
+                                L6
+                                {%endif%}
+                            {%endfor%}
+                        {%endif%}
+                    {%endif%}
+
+                    {%if gender == '1' %}
+                        {%if age >= 24 %}
+                            {%for like in like%}
+                                {%if like == '1'%}
+                                L4
+                                {%elif like == '2'%}
+                                L5
+                                {%elif like == '3'%}
+                                L6
+                                {%endif%}
+                            {%endfor%}
+                        {%endif%}
+                    {%endif%}
+                </div>
             </div>
+            {% elif target != NULL %}
+            <div id="user-step-2" class="user">session['target.fullname']</div>
             {% endif %}
         {% else %}
         <div id="bot-step-1" class="bot">
