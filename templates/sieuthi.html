@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head.html' %}
+<body>
+    <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
+    <div class="bot-mess">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                <ul class="ldc-items-list ldc-column ng-scope" ng-if="Items.length>0" style="">
+                  <div class="carousel-item active">
+                        <li class="ldc-item ng-scope" ng-repeat="item in Items">
+                                <div class="ldc-item-img" style="position: relative; bottom: 0;">
+                                    <a target="_blank" ng-href="/ho-chi-minh/quan-cua-hoa" href="https://foody.vn/ho-chi-minh/quan-cua-hoa" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)" ng-init="ImpressionGa(item,'O_DAU_', $index, DistrictId)">
+                                        <img ng-src="http://vincom.com.vn/sites/default/files/2016-09/VinMart_5.jpg" src="http://vincom.com.vn/sites/default/files/2016-09/VinMart_5.jpg">
+                                    </a>
+                                </div>
+                                <div class="ldc-item-header">
+                                    <div class="ldc-item-h-name">
+                                        <h2>
+                                            <a ng-href="/ho-chi-minh/quan-cua-hoa" target="_blank" href="https://foody.vn/ho-chi-minh/quan-cua-hoa" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)">
+                                                <span ng-bind="item.Name" class="ng-binding">Vinmart</span>
+                                            </a>
+                                        </h2>
+                                    </div>
+                                    <div class="ldc-item-h-address">
+                                        <span ng-bind="item.Address" class="ng-binding">74/14 Trương Quốc Dung, P.10, Quận Phú Nhuận, TP. HCM</span>
+                                    </div>
+                                </div>
+                        
+                            </li>
+                  </div>
+                  <div class="carousel-item">
+                        <li class="ldc-item ng-scope" ng-repeat="item in Items">
+                                <div class="ldc-item-img" style="position: relative; bottom: 0;">
+                                    <a target="_blank" ng-href="/ho-chi-minh/moc-rieu-nuong" href="https://foody.vn/ho-chi-minh/moc-rieu-nuong" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)" ng-init="ImpressionGa(item,'O_DAU_', $index, DistrictId)">
+                                        <img ng-src="https://tobiasroeder.com/app/uploads/2017/06/CircleK_K_logotype_Tobias_R%C3%B8der.jpg" src="https://tobiasroeder.com/app/uploads/2017/06/CircleK_K_logotype_Tobias_R%C3%B8der.jpg">
+                                    </a>
+                                </div>
+                                <div class="ldc-item-header">
+                                    <div class="ldc-item-h-name">
+                                        <h2>
+                                            <a ng-href="/ho-chi-minh/moc-rieu-nuong" target="_blank" href="https://foody.vn/ho-chi-minh/moc-rieu-nuong" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)">
+                                                <span ng-bind="item.Name" class="ng-binding">CircleK</span>
+                                            </a>
+                                        </h2>
+                                    </div>
+                                    <div class="ldc-item-h-address">
+                                        <span ng-bind="item.Address" class="ng-binding">318 - 320 Võ Văn Kiệt (Gần Ngã 3 Đề Thám), P. Cô Giang, Quận 1, TP. HCM</span>
+                                    </div>
+                                </div>
+                            </li>
+                  </div>
+                  <div class="carousel-item">
+                        <li class="ldc-item ng-scope" ng-repeat="item in Items">
+                                <div class="ldc-item-img" style="position: relative; bottom: 0;">
+                                    <a target="_blank" ng-href="/ho-chi-minh/kimbap-fc-nguyen-phuc-nguyen" href="https://foody.vn/ho-chi-minh/kimbap-fc-nguyen-phuc-nguyen" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)" ng-init="ImpressionGa(item,'O_DAU_', $index, DistrictId)">
+                                        <img ng-src="https://images.foody.vn/res/g25/242101/prof/s640x400/foody-mobile-12-jpg-959-636149695117450335.jpg" src="https://images.foody.vn/res/g25/242101/prof/s640x400/foody-mobile-12-jpg-959-636149695117450335.jpg">
+                                    </a>
+                                </div>
+                                <div class="ldc-item-header">
+                                    <div class="ldc-item-h-name">
+                                        <h2>
+                                            <a ng-href="/ho-chi-minh/kimbap-fc-nguyen-phuc-nguyen" target="_blank" href="https://foody.vn/ho-chi-minh/kimbap-fc-nguyen-phuc-nguyen" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)">
+                                                <span ng-bind="item.Name" class="ng-binding">BigC</span>
+                                            </a>
+                                        </h2>
+                                    </div>
+                                    <div class="ldc-item-h-address">
+                                        <span ng-bind="item.Address" class="ng-binding">107 Nguyễn Phúc Nguyên, P. 10, Quận 3, TP. HCM</span>
+                                    </div>
+                                </div>
+                            </li>
+                  </div>
+                  <div class="carousel-item">
+                        <li class="ldc-item ng-scope" ng-repeat="item in Items">
+                                <div class="ldc-item-img" style="position: relative; bottom: 0;">
+                                    <a target="_blank" ng-href="/ho-chi-minh/lau-mam-quan-vy" href="https://foody.vn/ho-chi-minh/lau-mam-quan-vy" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)" ng-init="ImpressionGa(item,'O_DAU_', $index, DistrictId)">
+                                        <img ng-src="https://images.foody.vn/res/g5/46397/prof/s640x400/foody-mobile-19-1-jpg-858-635537393539011687.jpg" src="https://images.foody.vn/res/g5/46397/prof/s640x400/foody-mobile-19-1-jpg-858-635537393539011687.jpg">
+                                    </a>
+                                </div>
+                                <div class="ldc-item-header">
+                                    <div class="ldc-item-h-name">
+                                        <h2>
+                                            <a ng-href="/ho-chi-minh/lau-mam-quan-vy" target="_blank" href="https://foody.vn/ho-chi-minh/lau-mam-quan-vy" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)">
+                                                <span ng-bind="item.Name" class="ng-binding">Kmart</span>
+                                            </a>
+                                        </h2>
+                                    </div>
+                                    <div class="ldc-item-h-address">
+                                        <span ng-bind="item.Address" class="ng-binding">106 Trần Bình Trọng, P. 1, Quận 5, TP. HCM</span>
+                                    </div>
+                                </div>
+                            </li>
+                  </div>
+                </ul>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+        <!-- <ul class="ldc-items-list ldc-column ng-scope" ng-if="Items.length>0" style="">
+            <li class="ldc-item ng-scope" ng-repeat="item in Items">
+                <div class="ldc-item-img" style="position: relative; bottom: 0;">
+                    <a target="_blank" ng-href="/ho-chi-minh/quan-cua-hoa" href="/ho-chi-minh/quan-cua-hoa" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)" ng-init="ImpressionGa(item,'O_DAU_', $index, DistrictId)">
+                        <img ng-src="https://images.foody.vn/res/g4/31427/prof/s640x400/foody-mobile-22-jpg.jpg" src="https://images.foody.vn/res/g4/31427/prof/s640x400/foody-mobile-22-jpg.jpg">
+                    </a>
+                </div>
+                <div class="ldc-item-header">
+                    <div class="ldc-item-h-name">
+                        <h2>
+                            <a ng-href="/ho-chi-minh/quan-cua-hoa" target="_blank" href="/ho-chi-minh/quan-cua-hoa" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)">
+                                <span ng-bind="item.Name" class="ng-binding">Quán Cua Hoa</span>
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="ldc-item-h-address">
+                        <span ng-bind="item.Address" class="ng-binding">74/14 Trương Quốc Dung, P.10, Quận Phú Nhuận, TP. HCM</span>
+                    </div>
+                </div>
+        
+            </li>
+            
+            <li class="ldc-item ng-scope" ng-repeat="item in Items">
+                <div class="ldc-item-img" style="position: relative; bottom: 0;">
+                    <a target="_blank" ng-href="/ho-chi-minh/moc-rieu-nuong" href="/ho-chi-minh/moc-rieu-nuong" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)" ng-init="ImpressionGa(item,'O_DAU_', $index, DistrictId)">
+                        <img ng-src="https://images.foody.vn/res/g21/201010/prof/s640x400/foody-mobile-29-jpg.jpg" src="https://images.foody.vn/res/g21/201010/prof/s640x400/foody-mobile-29-jpg.jpg">
+                    </a>
+                </div>
+                <div class="ldc-item-header">
+                    <div class="ldc-item-h-name">
+                        <h2>
+                            <a ng-href="/ho-chi-minh/moc-rieu-nuong" target="_blank" href="/ho-chi-minh/moc-rieu-nuong" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)">
+                                <span ng-bind="item.Name" class="ng-binding">Mộc - Riêu &amp; Nướng - Võ Văn Kiệt</span>
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="ldc-item-h-address">
+                        <span ng-bind="item.Address" class="ng-binding">318 - 320 Võ Văn Kiệt (Gần Ngã 3 Đề Thám), P. Cô Giang, Quận 1, TP. HCM</span>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="ldc-item ng-scope" ng-repeat="item in Items">
+                <div class="ldc-item-img" style="position: relative; bottom: 0;">
+                    <a target="_blank" ng-href="/ho-chi-minh/kimbap-fc-nguyen-phuc-nguyen" href="/ho-chi-minh/kimbap-fc-nguyen-phuc-nguyen" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)" ng-init="ImpressionGa(item,'O_DAU_', $index, DistrictId)">
+                        <img ng-src="https://images.foody.vn/res/g25/242101/prof/s640x400/foody-mobile-12-jpg-959-636149695117450335.jpg" src="https://images.foody.vn/res/g25/242101/prof/s640x400/foody-mobile-12-jpg-959-636149695117450335.jpg">
+                    </a>
+                </div>
+                <div class="ldc-item-header">
+                    <div class="ldc-item-h-name">
+                        <h2>
+                            <a ng-href="/ho-chi-minh/kimbap-fc-nguyen-phuc-nguyen" target="_blank" href="/ho-chi-minh/kimbap-fc-nguyen-phuc-nguyen" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)">
+                                <span ng-bind="item.Name" class="ng-binding">Kimbap City - Món Ăn Hàn Quốc</span>
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="ldc-item-h-address">
+                        <span ng-bind="item.Address" class="ng-binding">107 Nguyễn Phúc Nguyên, P. 10, Quận 3, TP. HCM</span>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="ldc-item ng-scope" ng-repeat="item in Items">
+                <div class="ldc-item-img" style="position: relative; bottom: 0;">
+                    <a target="_blank" ng-href="/ho-chi-minh/lau-mam-quan-vy" href="/ho-chi-minh/lau-mam-quan-vy" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)" ng-init="ImpressionGa(item,'O_DAU_', $index, DistrictId)">
+                        <img ng-src="https://images.foody.vn/res/g5/46397/prof/s640x400/foody-mobile-19-1-jpg-858-635537393539011687.jpg" src="https://images.foody.vn/res/g5/46397/prof/s640x400/foody-mobile-19-1-jpg-858-635537393539011687.jpg">
+                    </a>
+                </div>
+                <div class="ldc-item-header">
+                    <div class="ldc-item-h-name">
+                        <h2>
+                            <a ng-href="/ho-chi-minh/lau-mam-quan-vy" target="_blank" href="/ho-chi-minh/lau-mam-quan-vy" ng-click="ClickGA(item,'O_DAU_', $index, DistrictId)">
+                                <span ng-bind="item.Name" class="ng-binding">Lẩu Mắm Quán Vy</span>
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="ldc-item-h-address">
+                        <span ng-bind="item.Address" class="ng-binding">106 Trần Bình Trọng, P. 1, Quận 5, TP. HCM</span>
+                    </div>
+                </div>
+            </li>
+        </ul> -->
+        </div>
+<style>
+    .ldc-items-list.ldc-column .ldc-item-img img {
+    width: 100%;
+    max-height: 238px;}
+    .ldc-items-list.ldc-column .ldc-item {
+    width: 380px;
+}
+.ldc-items-list .ldc-item {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    margin: 15px 30px 15px 0;
+    background: #fff;
+    border-radius: 8px;
+}
+.ldc-items-list .ldc-item .ldc-item-header {
+    padding: 10px;
+}
+.ldc-items-list .ldc-item .ldc-item-header .ldc-item-h-address {
+    color: #888;
+    overflow: hidden;
+    display: block;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.carousel-inner{
+background-color:rgb(250, 60, 76);
+}
+</style>
+</body>
+</html>

@@ -189,7 +189,9 @@ def nhahang():
 @app.route('/nhanghi')
 def nhanghi():
     return render_template('nhanghi.html')
-
+@app.route('/sieuthi')
+def sieuthi():
+    return render_template('sieuthi.html')
 @app.route('/health')
 def health():
     return render_template('health.html')
