@@ -56,6 +56,9 @@
                 </div>
             </div>
             <div id="bot-step-3" class="bot">
+                {% if target_id != NULL%}
+                    <h5>{{target_id}}</h5>
+                {% endif %}
                 {% if fullname != NULL %}
                     <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
                     <div class="bot-mess">
@@ -158,7 +161,7 @@
         {% endif %}
         </div>
     </div>
-    {% if fullname != NULL %}
+    {% if fullname != NULL or target_id != NULL %}
         <style>
             .preload-left, .preload-right{display: none}
         </style>

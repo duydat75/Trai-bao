@@ -3,9 +3,10 @@
 {% include 'head.html' %}
 <body>
     <div class="bot-mess">
-        <form method="POST" action="{{ url_for('lover')}}">
+        <form method="POST">
             <label>Danh sách mục tiêu đã thêm:</label>
             <br>
+            <input type="text" name="form_type" value="1" style="display:none">
             {% for item in all_lover %}
                 <input type="radio" name="target" value="{{item.id}}"> 
                 {{item.fullname}} - 
