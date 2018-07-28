@@ -24,6 +24,10 @@ $(document).ready( function() {
     $("#nha-hang").on("click", function() {
         $("#bot-step-5").load("nhahang");
     })
+
+    $("#nha-nghi").on("click", function() {
+        $("#bot-step-5").load("nhanghi");
+    })
     
     // $("#new").on("click", function() {
     //     $("#bot-step-2-3").load("newlover");
