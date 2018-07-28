@@ -107,6 +107,7 @@ def login():
                 all_user = User.objects(username = username)
                 for item in all_user:
                     session['user_id'] = str(item.id)
+                    session['username'] = username
                 return redirect('/')
             else:
                 return "Đăng nhập thất bại"
