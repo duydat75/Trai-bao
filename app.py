@@ -30,6 +30,7 @@ def love():
         like = form.getlist('like')
         description = form['description']
 
+
         new_lover = Lover(
             user_id = user_id,
             fullname = fullname,
@@ -42,6 +43,8 @@ def love():
             description = description
         )
         new_lover.save()
+        
+
         return render_template('love.html', fullname=fullname, age=age, like=like)
     
 
@@ -160,21 +163,20 @@ def forgotpassword():
 def lover():
     all_lover = Lover.objects(user_id = session['user_id'])
     
-    
     return render_template('lover.html', all_lover = all_lover)
 
 @app.route('/health')
 def health():
     return render_template('health.html')
 
-@app.route('/health/bmi')
+# @app.route('/health/bmi')
+# def bmi():
+#     return render_template('bmi.html')
+
+@app.route('/gowhere')
 def bmi():
-    return render_template('bmi.html')
+    all_lover = Lover.objects(user_id = session['user_id'])
+    return render_template('gowhere.html')
 
-@app.route('/health/kcal')
-def kcal():
-    return render_template('kcal.html')
-
-if __name__ == '__main__':
-  app.run(debug=True)
+app.run(debug=True)
  
