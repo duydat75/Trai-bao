@@ -23,7 +23,8 @@
             </center>
         </div>
         {% if session['loggedin'] %}
-        <div class="col-md-8 chatbot">
+        <div class="row">
+        <div class="col-md-8 offset-md-2 chatbot">
             <div id="bot-step-1" class="bot">
                 <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
                 <div class="preload-left">
@@ -218,6 +219,7 @@
         </div>
         {% endif %}
         </div>
+    </div>
     </div>
     {% if fullname != NULL or target_id != NULL %}
         <style>
