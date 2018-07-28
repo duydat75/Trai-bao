@@ -202,6 +202,6 @@ def health():
 # def bmi():
 #     all_lover = Lover.objects(user_id = session['user_id'])
 #     return render_template('gowhere.html')
-
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
  
