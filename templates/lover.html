@@ -2,19 +2,20 @@
 <html lang="en">
 {% include 'head.html' %}
 <body>
-    {% for item in all_lover %}
-    <div onclick="toggleDisplay('{{loop.index}}')">{{item.fullname}}</div>
-        <div id="lover-{{loop.index}}" style="display:none" >{{item.age}}
-        {%for it in item.like%}
-            {% if it == '2' %}
-                an uong
-            {% elif it == '3' %}
-                xoac
-            {% endif %}
-        {%endfor%}
-        </div>
+    <div class="bot-mess">
+        {% for item in all_lover %}
+        <div onclick="toggleDisplay('{{loop.index}}')">{{item.fullname}}</div>
+            <div id="lover-{{loop.index}}" style="display:none" >{{item.age}}
+            {%for it in item.like%}
+                {% if it == '2' %}
+                    an uong
+                {% elif it == '3' %}
+                    xoac
+                {% endif %}
+            {%endfor%}
             </div>
-    {%endfor%}
+        {%endfor%}
+    </div>
     <script>
         function toggleDisplay(id) {
             // console.log(id);

@@ -16,13 +16,8 @@ def index():
 
 @app.route('/love', methods=["GET", "POST"])
 def love():
-    return render_template('love.html')
-    
-
-@app.route('/form-lover')
-def newlover():
     if request.method == "GET":
-        return render_template('newlover.html')
+        return render_template('love.html')
     elif request.method == "POST":
         form = request.form 
         user_id = session['user_id']
@@ -47,7 +42,12 @@ def newlover():
             description = description
         )
         new_lover.save()
-        return redirect(url_for('love'))
+        return render_template('love.html', fullname=fullname, age=age, like=like)
+    
+
+@app.route('/newlover')
+def newlover():
+    return render_template('newlover.html')
 
 @app.route('/register', methods = ['POST','GET'])
 def register():

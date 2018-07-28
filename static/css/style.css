@@ -8,24 +8,40 @@
 .d-flex{
     display:flex;
 }
+.user{
+    display:flex;
+    padding:3px;
+    justify-content: flex-end;
+}
 
-.user {
+.user-mess {
     background-color:rgb(243, 245, 250);
     color:rgb(73, 73, 99);
     padding:10px;
     border-radius: 20px
 }
-
-.bot {
+.bot{
+    display:flex;
+    padding:3px;
+    justify-content: flex-start;
+}
+.bot-mess {
     background-color: rgb(73, 73, 99);
     padding:10px;
     color:rgb(255, 255, 255);
-    border-radius: 20px
+    border-radius: 20px;
+    margin-bottom:7px;
 }
 
-.user input{
+.user-mess input{
     background-color:rgb(243, 245, 250);
     border: 1px solid #0084ff;
     color:#0084ff;
     border-radius: 20px;
+}
+
+input[type="button"]:disabled{
+    background: #dddddd;
+    color:grey;
+    border:grey;
 }

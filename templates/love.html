@@ -10,60 +10,112 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/css/style.css">
-    <!-- <script type="text/javascript" src="../static/js/script.js"></script> -->
-    <!-- <script type="text/javascript" src="{{ url_for('static', filename = 'script.js') }}"></script> -->
-    <script>
-        $(document).ready( function() {
-            $('#next').click(function() {
-                $.ajax("{{ url_for('newlover') }}").done(function (reply) {
-                    $('#bot-step-2').html(reply);
-                });
-            });
-
-            $('#lover').click(function(){
-                $.ajax("{{ url_for('lover') }}").done(function (lover){
-                    $('#bot-step-3').html(lover);
-                });
-            });
-        });
-    </script>
-    
+    <script type="text/javascript" src="../static/js/script.js"></script>
 </head>
 <body>
     <div class="container">
-        {% if session['loggedin'] %}
         <div class="col-md-12">
             <center class="p-4">
                 <h1>LOVE ASSISTANT</h1>
                 <small>By: Team Giải Nhất</small>
             </center>
-            
-            <div id="bot-step-1" class="d-flex p-3" style="justify-content: flex-start">
+        </div>
+        {% if session['loggedin'] %}
+        <div class="col-md-8">
+            <div id="bot-step-1" class="bot">
                 <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
-                <div style="display: block">
-                    <div class="bot">
+                <div class="preload-left">
+                    <img src="static/image/loading-white-d.gif" alt="" width="30%">
+                </div>
+                <div class="bot-step-1">
+                    <div class="bot-mess">
                         <h5>Xin chào, {{ session['user_id'] }}</h5>
                         <a href="{{ url_for('logout') }}">Logout</a>
                     </div>
-                    <br>
-                    <div class="bot"><h5>Bạn muốn tôi tư vấn gì hôm nay</h5></div>
+                    <div class="bot-mess"><h5>Tôi là chuyên gia tư vấn tình yêu.<br>Hãy thêm mục tiêu mới hoặc chọn lại mục tiêu đã thêm</h5></div>
                 </div>
             </div>
-            <div id="user-step-1" class="d-flex p-3" style="justify-content: flex-end">
-                <span class="user bg-transparent"><input type="button" id="next" value="New Lover" /></span>
-                <span class="user bg-transparent"><input type="button" id="calendar" value="Calendar"></span>
-                <span class="user bg-transparent"><input type="button" id="lover" value="Lover"></span>
-                <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">
+            <div id="user-step-1" class="user">
+                <div class="user-step-1">
+                    <span class="user-mess bg-transparent"><input type="button" id="new" value="Mục tiêu mới" /></span>
+                    <!-- <span class="user bg-transparent"><input type="button" id="calendar" value="Calendar"></span> -->
+                    <span class="user-mess bg-transparent"><input type="button" id="lover" value="Mục tiêu trước đó"></span>
+                </div>
+                <div class="preload-right">
+                    <img src="static/image/loading-white-d.gif" alt="" width="30%">
+                </div>
+                <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">  
             </div>
-            <div id="bot-step-2"></div>
+            <div id="bot-step-2" class="bot">
+                <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2" style="display:none">
+                <div>
+                <div id="bot-step-2-1"></div>
+                <div id="bot-step-2-2"></div>
+                </div>
+            </div>
             <div id="bot-step-3"></div>
+            <div id="bot-step-4" class="bot">
+                {% if fullname != NULL %}
+                    <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
+                    <div class="bot-mess">
+                        <h5>Đối tượng: {{ fullname }} - {{ age }} tuổi - thích 
+                        {% for like in like %}
+                            {% if like == '1' %}
+                                ăn uống
+                            {% elif like == '2' %}
+                                shopping
+                            {% elif like == '3' %}
+                                xoạc
+                            {% endif %}
+                        {%endfor%}
+                        </h5>
+                    </div>
+            </div>
+            <div id="user-step-2" class="user">
+                <span class="user-mess bg-transparent"><input type="button" id="di-dau" value="Đi đâu" /></span>
+                <!-- <span class="user bg-transparent"><input type="button" id="calendar" value="Calendar"></span> -->
+                <span class="user-mess bg-transparent"><input type="button" id="mua-gi" value="Mua gì"></span>
+                <!-- <div class="preload-right">
+                    <img src="static/image/loading-white-d.gif" alt="" width="30%">
+                </div> -->
+                <img src="../static/image/male-profile.jpg" alt="" class="avatar ml-2">  
+            </div>
+            {% endif %}
         {% else %}
-            <h3>Xin chao, Khach</h3>
-            <a href="{{ url_for('login') }}">Dang nhap</a>
-            <a href="{{ url_for('register') }}">Dang ky</a>
+        <div id="bot-step-1" class="bot">
+            <img src="../static/image/chamhoi-icon-96.png" alt="" class="avatar mr-2">
+            <div class="bot">
+                <h3>Xin chào! Tôi là Bot. Bạn hãy </h3>
+                <span class="user-mess bg-transparent"><a href="{{ url_for('login') }}">Dang nhap</a></span>
+                <span class="user-mess bg-transparent"><a href="{{ url_for('register') }}">Dang ky</a></span>
+            </div>
+        </div>
         {% endif %}
         </div>
     </div>
+    {% if fullname != NULL %}
+        <style>
+            .preload-left, .preload-right{display: none}
+        </style>
+    {% else %}
+        <style>
+            .bot-step-1, .user-step-1, .preload-right {display:none;}
+            .preload-right {text-align: right}
+            .preload-left {text-align:left}
+        </style>
+        <script>
+        $(function() {
+            $(".preload-left").fadeOut(2000, function() {
+                $(".bot-step-1").fadeIn(1000);
+                $(".preload-right").fadeIn(1000);
+                $(".preload-right").fadeOut(2000, function() {
+                    $(".user-step-1").fadeIn(1000);
+                });
+            });
+        });
+        </script>
+    {% endif %}
 </body>
 </html>
