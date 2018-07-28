@@ -169,10 +169,10 @@ def lover():
     elif request.method == 'POST':
         form = request.form
         target = form['target']
-        one_lover = Lover.objects(id=target)
-        # target.fullname = one_lover.fullname
-        # session['target.fullname'] = target.fullname
-        return target
+        one_lover = Lover.objects.get(id=target)
+        target_fullname = one_lover.fullname
+        session['target.fullname'] = target_fullname
+        return session['target.fullname']
 
 
 @app.route('/health')
